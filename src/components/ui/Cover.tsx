@@ -12,14 +12,35 @@ interface Props {
   sizes?: string;
   /** Show the oversized wordmark on generated covers. */
   wordmark?: boolean;
+  /** Show the brand logo when the app has one, ahead of the icon or screenshots. */
+  preferLogo?: boolean;
 }
 
 /**
  * Real cover image when the app has one; otherwise an editorial composition
  * (oversized glyph + cropped wordmark). Never pretends to be a screenshot.
  */
-export function Cover({ app, tone, className, sizes = "(min-width: 1080px) 50vw, 100vw", wordmark = true }: Props) {
+export function Cover({ app, tone, className, sizes = "(min-width: 1080px) 50vw, 100vw", wordmark = true, preferLogo = false }: Props) {
   const dark = !app.theme && (tone ?? app.artwork.tone) === "dark";
+
+  if (preferLogo && app.logo) {
+    return (
+      <div className={cn("relative overflow-hidden", className)} style={{ ...appThemeStyle(app), backgroundColor: app.logoBackground }}>
+        <div className="absolute inset-[12%]">
+          <Image src={app.logo} alt={app.name} fill sizes={sizes} className="zoom-img object-contain" />
+        </div>
+      </div>
+    );
+  }
+
+  if (app.coverIcon && app.icon) {
+    return (
+      <div className={cn("relative overflow-hidden", className)} style={{ ...appThemeStyle(app), backgroundColor: app.logoBackground }}>
+        <Image src={app.icon} alt={app.name} fill sizes={sizes} className="zoom-img object-contain" />
+      </div>
+    );
+  }
+
   const coverImage = app.coverImage ?? (app.screenshotOrientation === "portrait" ? undefined : app.screenshots[0]);
 
   if (coverImage) {

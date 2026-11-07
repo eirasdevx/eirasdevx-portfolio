@@ -33,6 +33,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: project.summary,
     alternates: alternates(lang, `/projects/${project.slug}`),
     openGraph: { title, description: project.summary },
+    ...(project.app?.icon && { icons: { icon: project.app.icon, apple: project.app.icon } }),
   };
 }
 
@@ -128,7 +129,7 @@ export default async function ProjectPage({ params }: Props) {
         {app && (
           <div className="shell pb-6">
             <div className="load-photo" style={stagger(400)}>
-              <Cover app={app} className="h-[clamp(260px,46vw,640px)] rounded-[1.75rem]" sizes="100vw" />
+              <Cover app={app} preferLogo={app.caseStudyLogo} className="h-[clamp(260px,46vw,640px)] rounded-[1.75rem]" sizes="100vw" />
             </div>
           </div>
         )}

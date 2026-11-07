@@ -47,6 +47,8 @@ export const apps: StoreAppSource[] = [
     icon: "/app-icons/fastpass.png",
     logo: "/app-logos/fastpass.png",
     logoBackground: "#111014",
+    coverIcon: true,
+    caseStudyLogo: true,
     slug: "fastpass",
     name: "FastPass",
     tagline: {

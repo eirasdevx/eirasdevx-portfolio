@@ -34,6 +34,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: app.description,
     alternates: alternates(lang, `/apps/${app.slug}`),
     openGraph: { title: app.name, description: app.tagline },
+    ...(app.icon && { icons: { icon: app.icon, apple: app.icon } }),
   };
 }
 

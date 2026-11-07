@@ -86,6 +86,10 @@ export interface StoreAppSource {
   /** Gameiras publishes an HTML/CSS wordmark rather than an image. */
   wordmark?: "gameiras";
   coverImage?: string;
+  /** Covers show the app icon, centred on `logoBackground`, instead of a screenshot. */
+  coverIcon?: boolean;
+  /** The case study page shows the brand logo as its cover. */
+  caseStudyLogo?: boolean;
   screenshots: string[];
   /** Phone captures: shown as tall tiles and never used as the 16:10 cover. */
   screenshotOrientation?: "landscape" | "portrait";
