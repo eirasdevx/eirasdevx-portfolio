@@ -1,5 +1,5 @@
-import { apps } from "@/data/apps";
-import { projects } from "@/data/projects";
+import { apps as allApps } from "@/data/apps";
+import { projects as allProjects } from "@/data/projects";
 import type { Locale } from "@/i18n/config";
 import type { StoreApp, StoreAppSource } from "@/types/app";
 import type { CaseStudy, Project } from "@/types/project";
@@ -9,7 +9,14 @@ import type { CaseStudy, Project } from "@/types/project";
  * the catalog to Supabase / PostgreSQL only means rewriting these functions
  * (they can become async without touching the visual components' props).
  * Every getter resolves texts for one language.
+ *
+ * Hidden apps are filtered out HERE and only here, so no page, card, search,
+ * sitemap entry or counter can show them. A project is published only while
+ * its app is.
  */
+const apps = allApps.filter((app) => !app.hidden);
+const visibleSlugs = new Set(apps.map((app) => app.slug));
+const projects = allProjects.filter((p) => !p.appSlug || visibleSlugs.has(p.appSlug));
 
 function resolveApp(app: StoreAppSource, lang: Locale): StoreApp {
   return {

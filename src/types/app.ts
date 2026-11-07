@@ -70,6 +70,12 @@ export interface StoreAppSource {
   technologies: string[];
   status: AppStatus;
   featured: boolean;
+  /**
+   * Kept in the catalog but not published anywhere: store, projects, detail
+   * pages, hero, sitemap and counters all skip it. Remove the flag (or set it
+   * to false) once the project is public on GitHub.
+   */
+  hidden?: boolean;
 
   icon?: string;
   /** The icon image fills its rounded tile edge to edge, so no outline is drawn around it. */

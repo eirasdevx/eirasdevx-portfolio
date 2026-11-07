@@ -330,17 +330,29 @@
     z-index:var(--card-layer);
     transition:z-index 0s 600ms;
   }
-  .showcase-fastpass-slot {
+  /* Slots are positional, not tied to an app: HeroVisual fills them with the
+     visible featured apps (solo = 1 app, lead + wide = 2, lead + left + right = 3). */
+  .showcase-slot-solo {
+    top:6%; left:6%; width:88%; height:84%;
+    --card-angle:-3deg; --card-hover-angle:1deg; --card-layer:1;
+    --card-cycle:7.2s; --card-phase:-1.6s; --card-float:-3px;
+  }
+  .showcase-slot-lead {
     top:5%; left:7%; width:86%; height:56%;
     --card-angle:-5deg; --card-hover-angle:2deg; --card-layer:1;
     --card-cycle:6.8s; --card-phase:-1.2s; --card-float:-3px;
   }
-  .showcase-carretazo-slot {
+  .showcase-slot-wide {
+    bottom:3%; left:12%; width:62%; height:36%;
+    --card-angle:-6deg; --card-hover-angle:2deg; --card-layer:2;
+    --card-cycle:7.6s; --card-phase:-4.1s; --card-float:-4px;
+  }
+  .showcase-slot-left {
     bottom:3%; left:2%; width:47%; height:38%;
     --card-angle:-7deg; --card-hover-angle:2.5deg; --card-layer:2;
     --card-cycle:7.6s; --card-phase:-4.1s; --card-float:-4px;
   }
-  .showcase-catola-slot {
+  .showcase-slot-right {
     bottom:3%; right:1%; width:47%; height:38%;
     --card-angle:7deg; --card-hover-angle:-2.5deg; --card-layer:3;
     --card-cycle:6.2s; --card-phase:-2.8s; --card-float:-3px;
@@ -446,11 +458,35 @@
   .showcase-ticket-stub { height:23%; border-top:1px dashed #24102e66; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:0.7cqw; padding:1.4cqw 2.3cqw; }
   .showcase-ticket-stub > span { font-size:0.9cqw; letter-spacing:0.24em; }
   .showcase-ticket-stub > i { width:100%; flex:1; background:repeating-linear-gradient(90deg,#24102e 0 2px,transparent 2px 4px,#24102e 4px 5px,transparent 5px 8px); }
-  .showcase-carretazo, .showcase-catola { justify-content:space-between; padding:3.2cqw; }
-  .showcase-carretazo { background:var(--app-logo-background); color:var(--color-ink); }
-  .showcase-catola { background:var(--app-logo-background); color:var(--color-ink); }
-  .showcase-carretazo h2, .showcase-catola h2 { font-size:4.8cqw; }
-  .showcase-carretazo p, .showcase-catola p { margin-top:1.3cqw; font-size:clamp(10px,1.9cqw,14px); line-height:1.25; max-width:24ch; }
+  /* Small card: original logo centred, name and pitch below. */
+  .showcase-brand { justify-content:space-between; padding:3.2cqw; background:var(--app-logo-background); color:var(--color-ink); }
+  .showcase-brand h2 { font-size:4.8cqw; }
+  .showcase-brand p { margin-top:1.3cqw; font-size:clamp(10px,1.9cqw,14px); line-height:1.25; max-width:24ch; color:var(--color-mute); }
+  /* Large card for any app: copy on the left, real phone capture (or logo) on the right. */
+  .showcase-lead { background:var(--app-logo-background); color:var(--color-ink); }
+  .showcase-lead .showcase-project-top { color:var(--color-mute); }
+  .showcase-lead-body {
+    display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,0.85fr);
+    align-items:center; gap:4cqw; flex:1; min-height:0; padding-block:3cqw;
+  }
+  .showcase-lead-copy { min-width:0; }
+  .showcase-lead-mark {
+    position:relative; display:block; overflow:hidden;
+    width:13cqw; height:13cqw; border-radius:3.2cqw;
+    box-shadow:0 8px 20px -10px #0009; background:var(--color-card);
+  }
+  .showcase-lead h2 { margin-top:3cqw; font-size:6.4cqw; }
+  .showcase-lead-solo h2 { font-size:7.4cqw; }
+  .showcase-lead p { margin-top:1.8cqw; max-width:22ch; font-size:clamp(11px,2.2cqw,17px); line-height:1.4; color:var(--color-mute); }
+  .showcase-lead-bottom { color:var(--color-ink); border-top-color:color-mix(in srgb,var(--color-ink) 18%,transparent); }
+  .showcase-phone {
+    position:relative; justify-self:center;
+    height:100%; max-height:100%; aspect-ratio:1 / 2;
+    overflow:hidden; border:1.1cqw solid #0b0711; border-radius:4.6cqw;
+    background:#0b0711; transform:rotate(5deg);
+    box-shadow:0 18px 34px -12px #000a,0 0 0 1px color-mix(in srgb,var(--color-ink) 14%,transparent);
+  }
+  .showcase-lead .showcase-brand-art { width:100%; height:70%; }
   /* Original Gameiras wordmark: Outfit 800, green initial, ink text, coral dot. */
   .gameiras-wordmark { display:inline-flex; align-items:center; font-family:"Gameiras Outfit",sans-serif; font-weight:800; letter-spacing:-0.06em; line-height:1.15; color:#1f6f62; white-space:nowrap; }
   .gameiras-wordmark > span { color:#1f3440; }

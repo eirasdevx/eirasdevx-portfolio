@@ -12,6 +12,7 @@ import type { StoreAppSource } from "@/types/app";
 export const apps: StoreAppSource[] = [
   {
     id: "app-kora",
+    hidden: true,
     theme: { background: "#101622", surface: "#1a2233", foreground: "#f8fafc", muted: "#a3b0c2", accent: "#7aa5ff", accentText: "#0b1f4d" },
     icon: "/app-icons/kora.svg",
     logo: "/app-icons/kora.svg",
@@ -42,6 +43,7 @@ export const apps: StoreAppSource[] = [
   },
   {
     id: "app-fastpass",
+    hidden: true,
     theme: { background: "#111014", surface: "#1d1725", foreground: "#f6edff", muted: "#bbadca", accent: "#dca4fa", accentText: "#24102e" },
     icon: "/app-icons/fastpass.png",
     logo: "/app-logos/fastpass.png",
@@ -105,6 +107,7 @@ export const apps: StoreAppSource[] = [
   },
   {
     id: "app-carretazo",
+    hidden: true,
     theme: { background: "#13120f", surface: "#211f19", foreground: "#f4efdf", muted: "#bfb6a1", accent: "#e4b94e", accentText: "#231c0c" },
     icon: "/app-icons/carretazo.png",
     logo: "/app-logos/carretazo.png",
@@ -135,6 +138,7 @@ export const apps: StoreAppSource[] = [
   },
   {
     id: "app-gameiras",
+    hidden: true,
     theme: { background: "#f6f3ec", surface: "#fffdf8", foreground: "#1f3440", muted: "#5a6f78", accent: "#1f6f62", accentText: "#fffdf8" },
     wordmark: "gameiras",
     logoBackground: "#f6f3ec",
@@ -165,6 +169,7 @@ export const apps: StoreAppSource[] = [
   },
   {
     id: "app-birrario",
+    hidden: true,
     slug: "birrario",
     name: "Birrario",
     tagline: {
@@ -191,6 +196,7 @@ export const apps: StoreAppSource[] = [
   },
   {
     id: "app-dead-ink",
+    hidden: true,
     slug: "dead-ink",
     name: "Dead Ink",
     tagline: {
@@ -216,6 +222,7 @@ export const apps: StoreAppSource[] = [
   },
   {
     id: "app-rally-legends-3d",
+    hidden: true,
     slug: "rally-legends-3d",
     name: "Rally Legends 3D",
     tagline: {
@@ -241,6 +248,7 @@ export const apps: StoreAppSource[] = [
   },
   {
     id: "app-teamoff",
+    hidden: true,
     slug: "teamoff",
     name: "TeamOff",
     tagline: {
@@ -266,6 +274,7 @@ export const apps: StoreAppSource[] = [
   },
   {
     id: "app-cuadrilla-la-catola",
+    hidden: true,
     theme: { background: "#2d173d", surface: "#382047", foreground: "#faf5ff", muted: "#cbb8d6", accent: "#dfb762", accentText: "#271532" },
     icon: "/app-icons/cuadrilla-la-catola.png",
     logo: "/app-logos/cuadrilla-la-catola.png",
@@ -296,6 +305,7 @@ export const apps: StoreAppSource[] = [
   },
   {
     id: "app-impostor",
+    hidden: true,
     icon: "/app-logos/impostor.svg",
     logo: "/app-logos/impostor.svg",
     theme: { background: "#1f2937", surface: "#1f2937", foreground: "#f9fafb", muted: "#a6b2c4", accent: "#4ade80", accentText: "#052e16" },
@@ -325,6 +335,7 @@ export const apps: StoreAppSource[] = [
   },
   {
     id: "app-prior",
+    hidden: true,
     slug: "prior",
     name: "Prior",
     tagline: {
@@ -350,6 +361,7 @@ export const apps: StoreAppSource[] = [
   },
   {
     id: "app-sortilegium",
+    hidden: true,
     slug: "sortilegium",
     name: "Sortilegium",
     tagline: {
@@ -376,6 +388,7 @@ export const apps: StoreAppSource[] = [
   },
   {
     id: "app-fantasy-challenge",
+    hidden: true,
     slug: "fantasy-challenge",
     name: "Fantasy Challenge",
     tagline: {
@@ -402,6 +415,7 @@ export const apps: StoreAppSource[] = [
   },
   {
     id: "app-yo-nunca",
+    hidden: true,
     slug: "yo-nunca",
     name: "Yo Nunca",
     tagline: {
@@ -427,6 +441,7 @@ export const apps: StoreAppSource[] = [
   },
   {
     id: "app-contador-de-mus",
+    hidden: true,
     slug: "contador-de-mus",
     name: "Contador de Mus",
     tagline: {
@@ -452,6 +467,7 @@ export const apps: StoreAppSource[] = [
   },
   {
     id: "app-darts-counter",
+    hidden: true,
     slug: "darts-counter",
     name: "Darts Counter",
     tagline: {
@@ -477,6 +493,7 @@ export const apps: StoreAppSource[] = [
   },
   {
     id: "app-perfectpay",
+    hidden: true,
     slug: "perfectpay",
     name: "PerfectPay",
     tagline: {

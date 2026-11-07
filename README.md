@@ -30,7 +30,12 @@ Add one object to `src/data/apps.ts`. That entry feeds the store cards, the deta
 - Icons: `public/app-icons/<slug>.png` → `icon: "/app-icons/<slug>.png"`. Without one, a generated monochrome mark is used.
 - Original logos: `logo` and `logoBackground` provide a contained brand cover until screenshots are available. Sources and the Gameiras typographic wordmark are documented in `public/app-logos/SOURCES.md`. Impostor has no public logo and retains its placeholder.
 - Screenshots: `public/screenshots/<slug>/01.webp` → `screenshots: ["/screenshots/<slug>/01.webp"]`.
-- `featured: true` puts the app in the Featured row. The first featured app becomes the hero card.
+- `featured: true` puts the app in the Featured row and in the hero. The hero shows up to three visible featured apps and adapts its layout to how many there are (one large card with the real phone capture, two, or the original three-card composition).
+- `hidden: true` keeps an entry in the catalog but publishes it nowhere: store, projects, detail pages (they return 404), hero, search, sitemap and counters all skip it. The filter lives only in `src/lib/catalog.ts`.
+
+### Publishing policy
+
+Only projects whose code is public on GitHub are shown. Right now that is **San Apptolín**; every other entry is `hidden: true`. To publish one, push its repository first, then in `src/data/apps.ts` delete its `hidden: true` line and add its `repositoryUrl`.
 
 Case studies live in `src/data/projects.ts` and link to an app through `appSlug`. Name, status, stack and artwork come from the catalog, so nothing is duplicated. Any case-study field left undefined renders as "Documentation in progress".
 

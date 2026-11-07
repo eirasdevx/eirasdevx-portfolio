@@ -197,24 +197,32 @@ export default async function AppPage({ params }: Props) {
         </div>
       </section>
 
-      {/* Related */}
-      <section aria-labelledby="related-title" className="bg-hero text-ink">
-        <div className="shell py-[clamp(4rem,9vw,8rem)]">
-          <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
-            <h2 id="related-title" className="h-section text-[clamp(2.25rem,5vw,4.5rem)]">
-              {t.app.related}
-            </h2>
+      {/* Related — with nothing else published, only the way back remains. */}
+      <section aria-labelledby={related.length ? "related-title" : undefined} className="bg-hero text-ink">
+        <div className={related.length ? "shell py-[clamp(4rem,9vw,8rem)]" : "shell flex justify-center py-[clamp(3rem,6vw,5rem)]"}>
+          {related.length ? (
+            <>
+              <div className="mb-8 flex flex-wrap items-end justify-between gap-4">
+                <h2 id="related-title" className="h-section text-[clamp(2.25rem,5vw,4.5rem)]">
+                  {t.app.related}
+                </h2>
+                <ButtonLink href={localePath(lang, "/apps")} variant="outline-dark">
+                  <Arrow dir="left" /> {t.app.back}
+                </ButtonLink>
+              </div>
+              <ul className="grid gap-3 min-[560px]:grid-cols-2 lg:grid-cols-3">
+                {related.map((a, i) => (
+                  <Reveal as="li" key={a.id} delay={i * 80}>
+                    <AppCard app={a} lang={lang} t={pickStoreDict(t)} />
+                  </Reveal>
+                ))}
+              </ul>
+            </>
+          ) : (
             <ButtonLink href={localePath(lang, "/apps")} variant="outline-dark">
               <Arrow dir="left" /> {t.app.back}
             </ButtonLink>
-          </div>
-          <ul className="grid gap-3 min-[560px]:grid-cols-2 lg:grid-cols-3">
-            {related.map((a, i) => (
-              <Reveal as="li" key={a.id} delay={i * 80}>
-                <AppCard app={a} lang={lang} t={pickStoreDict(t)} />
-              </Reveal>
-            ))}
-          </ul>
+          )}
         </div>
       </section>
     </div>

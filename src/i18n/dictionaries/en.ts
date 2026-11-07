@@ -103,7 +103,7 @@ export const en: Dictionary = {
     label: "Store",
     title: "My App Store",
     subtitle: "Independent software. Built from ideas.",
-    pageIntro: "Independent software. Built from ideas. {total} apps in the catalog, {available} publicly available today — the rest are shown with their real status.",
+    pageIntro: "Independent software. Built from ideas. Only what is already public is here, with its source code on GitHub — more is on the way.",
     catalogAria: "Catalog",
     searchLabel: "Search apps",
     searchPlaceholder: "Search apps, technologies, platforms…",

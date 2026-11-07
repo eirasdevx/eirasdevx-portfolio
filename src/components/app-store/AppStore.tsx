@@ -192,7 +192,10 @@ export function AppStore({ apps, lang, t, pageSize = 6, syncUrl = false, showFea
 
       {/* Category chips */}
       <div role="group" aria-label={s.categoryGroup} className="mt-4 flex gap-2 overflow-x-auto pb-1 [scrollbar-width:none]">
-        {(["all", ...Object.keys(t.categories)] as (AppCategory | "all")[]).map((key) => {
+        {/* Empty categories are left out: a "0" chip only advertises what isn't there. */}
+        {(["all", ...Object.keys(t.categories)] as (AppCategory | "all")[])
+          .filter((key) => key === "all" || key === filters.category || categoryCounts[key] > 0)
+          .map((key) => {
           const active = filters.category === key;
           const count = key === "all" ? apps.length : categoryCounts[key];
           return (

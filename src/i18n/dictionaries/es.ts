@@ -105,7 +105,7 @@ export const es = {
     label: "Tienda",
     title: "Mi App Store",
     subtitle: "Software independiente. Nacido de ideas.",
-    pageIntro: "Software independiente. Nacido de ideas. {total} apps en el catálogo, {available} disponibles públicamente hoy; el resto se muestra con su estado real.",
+    pageIntro: "Software independiente. Nacido de ideas. Aquí solo está lo que ya es público, con su código abierto en GitHub; el resto irá llegando.",
     catalogAria: "Catálogo",
     searchLabel: "Buscar apps",
     searchPlaceholder: "Busca apps, tecnologías, plataformas…",
