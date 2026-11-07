@@ -1,0 +1,419 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Portfolio y catálogo de proyectos de Serafín Eiras: aplicaciones web, móviles, herramientas y videojuegos construidos a partir de ideas." />
+  <title>Serafín Eiras | EIRAS.DEVX</title>
+
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+
+<body>
+  <!-- NAV -->
+  <header class="nav">
+    <div class="container">
+      <div class="nav-inner">
+        <a class="brand" href="#top" aria-label="Ir al inicio">
+          <span class="logo" aria-hidden="true"></span>
+          <span>EIRAS.DEVX</span>
+        </a>
+
+        <button class="hamburger btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">
+          ☰ Menú
+        </button>
+
+        <nav class="links" id="navLinks" aria-label="Navegación principal">
+          <a href="#sobre-mi">Sobre mí</a>
+          <a href="#skills">Skills</a>
+          <a href="#proyectos">Proyectos</a>
+          <a href="#experiencia">Experiencia</a>
+          <a href="#formacion">Formación</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+
+        <div class="cta">
+          <a class="btn" href="#contacto">Hablemos</a>
+          <a class="btn primary" href="https://eirasdevx.netlify.app/" target="_blank" rel="noopener">Ver Web Oficial</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main id="top" class="container">
+    <!-- HERO -->
+    <section class="hero" aria-label="Presentación">
+      <div class="hero-grid">
+        <div class="card hero-main">
+          <div class="badge"><span class="dot"></span> Disponible para proyectos · Remoto / Presencial</div>
+          <h1>Hola, soy <span class="gradient-text">Serafín Eiras</span>.</h1>
+          <p class="subtitle">
+            Desarrollador de software independiente y Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM).
+            Construyo aplicaciones web y multiplataforma de principio a fin: desde la base de datos y el backend hasta interfaces cuidadas y videojuegos en Unity.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn primary" href="#proyectos">Ver proyectos</a>
+            <a class="btn" href="https://github.com/eirasdevx" target="_blank" rel="noopener">GitHub</a>
+            <a class="btn" href="https://eirasdevx.netlify.app/" target="_blank" rel="noopener">Web EIRAS.DEVX</a>
+          </div>
+
+          <p class="small">Proyectos y experiencias reales construidos a partir de ideas.</p>
+        </div>
+
+        <aside class="card hero-side" aria-label="Datos rápidos">
+          <div class="mini">
+            <h3>Stack principal</h3>
+            <p>TypeScript · Next.js · C# · SQL · Unity · Python</p>
+          </div>
+          <div class="kpis">
+            <div class="mini">
+              <h3>Ubicación</h3>
+              <p>España</p>
+            </div>
+            <div class="mini">
+              <h3>Idiomas</h3>
+              <p>ES · EN</p>
+            </div>
+            <div class="mini">
+              <h3>Interés</h3>
+              <p>Clean Code &amp; Arquitectura</p>
+            </div>
+            <div class="mini">
+              <h3>GitHub</h3>
+              <p>@eirasdevx</p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ABOUT + SKILLS -->
+    <section id="sobre-mi" aria-label="Sobre mí">
+      <div class="section-title">
+        <h2>Sobre mí</h2>
+        <span>El desarrollador detrás del código</span>
+      </div>
+
+      <div class="grid-2">
+        <div class="panel">
+          <p>
+            Soy desarrollador de software centrado en crear productos digitales prácticos, creativos y escalables. 
+            Técnico Superior en Desarrollo de Aplicaciones Multiplataforma (DAM). Construyo aplicaciones web y multiplataforma de principio a fin: 
+            desde la arquitectura de la base de datos y el backend hasta la interfaz final que las personas usan a diario.
+          </p>
+          <p>
+            Me importan las interfaces limpias, los modelos de datos sólidos, las buenas prácticas de seguridad y el desarrollo de experiencias interactivas y videojuegos en Unity. 
+            La mayor parte de lo que aprendo nace de idear, construir y publicar proyectos reales.
+          </p>
+        </div>
+
+        <div class="panel" id="skills" aria-label="Habilidades">
+          <p><strong>Habilidades &amp; Tecnologías</strong></p>
+          <div class="chips">
+            <span class="chip">HTML</span>
+            <span class="chip">CSS</span>
+            <span class="chip">JavaScript</span>
+            <span class="chip">TypeScript</span>
+            <span class="chip">React</span>
+            <span class="chip">Next.js</span>
+            <span class="chip">Tailwind CSS</span>
+            <span class="chip">C#</span>
+            <span class="chip">SQL</span>
+            <span class="chip">PostgreSQL</span>
+            <span class="chip">Prisma</span>
+            <span class="chip">Supabase</span>
+            <span class="chip">Git</span>
+            <span class="chip">GitHub</span>
+            <span class="chip">Docker</span>
+            <span class="chip">Unity</span>
+            <span class="chip">Android Studio</span>
+            <span class="chip">Zustand</span>
+          </div>
+          <p class="small">Herramientas y tecnologías empleadas en proyectos en producción.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="proyectos" aria-label="Proyectos">
+      <div class="section-title">
+        <h2>Proyectos seleccionados</h2>
+        <span>Información extraída de la plataforma oficial eiras.devx</span>
+      </div>
+
+      <div class="cards">
+        <article class="proj">
+          <div>
+            <div class="thumb" aria-hidden="true"></div>
+            <h3>FastPass · Plataforma de eventos</h3>
+            <p>Entradas con QR, aforo y control de acceso a eventos desde una única plataforma, sin que el público tenga que registrarse.</p>
+            <div class="chips">
+              <span class="chip">Next.js</span>
+              <span class="chip">Supabase</span>
+              <span class="chip">PostgreSQL</span>
+              <span class="chip">TypeScript</span>
+            </div>
+          </div>
+          <div class="meta">
+            <a href="https://fastpass-ticketmanager.netlify.app/" target="_blank" rel="noopener">Demo en vivo</a>
+            <a href="https://eirasdevx.netlify.app/projects/fastpass" target="_blank" rel="noopener">Caso de estudio</a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div>
+            <div class="thumb" aria-hidden="true"></div>
+            <h3>Kora · Gestión para asociaciones</h3>
+            <p>Un único espacio de trabajo para asociaciones: socios, eventos, contabilidad y documentos sin hojas de cálculo dispersas.</p>
+            <div class="chips">
+              <span class="chip">Next.js</span>
+              <span class="chip">Prisma</span>
+              <span class="chip">PostgreSQL</span>
+              <span class="chip">Zustand</span>
+            </div>
+          </div>
+          <div class="meta">
+            <a href="https://github.com/eirasdevx/kora" target="_blank" rel="noopener">Código en GitHub</a>
+            <a href="https://eirasdevx.netlify.app/projects/kora" target="_blank" rel="noopener">Caso de estudio</a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div>
+            <div class="thumb" aria-hidden="true"></div>
+            <h3>San Apptolín · Guía en directo</h3>
+            <p>Una guía en directo de las fiestas de San Antolín en Medina del Campo: qué pasa ahora, mapa de actos y favoritos sin registro.</p>
+            <div class="chips">
+              <span class="chip">Next.js</span>
+              <span class="chip">TypeScript</span>
+              <span class="chip">Leaflet</span>
+              <span class="chip">PWA</span>
+            </div>
+          </div>
+          <div class="meta">
+            <a href="https://san-apptolin.netlify.app/" target="_blank" rel="noopener">Demo en vivo</a>
+            <a href="https://eirasdevx.netlify.app/projects/san-apptolin" target="_blank" rel="noopener">Caso de estudio</a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div>
+            <div class="thumb" aria-hidden="true"></div>
+            <h3>Carretazo · App social de fotografía</h3>
+            <p>La cámara desechable, reinventada para grupos: dispara ahora con tus amigos y revela el álbum compartido en una fecha fijada.</p>
+            <div class="chips">
+              <span class="chip">Next.js</span>
+              <span class="chip">Supabase</span>
+              <span class="chip">Capacitor</span>
+              <span class="chip">PWA</span>
+            </div>
+          </div>
+          <div class="meta">
+            <a href="https://carretazo.netlify.app/" target="_blank" rel="noopener">Demo en vivo</a>
+            <a href="https://eirasdevx.netlify.app/projects/carretazo" target="_blank" rel="noopener">Caso de estudio</a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div>
+            <div class="thumb" aria-hidden="true"></div>
+            <h3>Gameiras · Consola de minijuegos</h3>
+            <p>Minijuegos para jugar en grupo: una pantalla compartida como consola y un teléfono móvil como mando para cada participante mediante QR.</p>
+            <div class="chips">
+              <span class="chip">Next.js</span>
+              <span class="chip">Three.js</span>
+              <span class="chip">WebRTC</span>
+              <span class="chip">PeerJS</span>
+            </div>
+          </div>
+          <div class="meta">
+            <a href="https://gameiras.netlify.app/" target="_blank" rel="noopener">Demo en vivo</a>
+            <a href="https://eirasdevx.netlify.app/projects/gameiras" target="_blank" rel="noopener">Caso de estudio</a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div>
+            <div class="thumb" aria-hidden="true"></div>
+            <h3>Birrario · Colección de cervezas</h3>
+            <p>Álbum digital para descubrir, coleccionar y puntuar cervezas de España con reconocimiento automático de etiquetas por OCR en el móvil.</p>
+            <div class="chips">
+              <span class="chip">Next.js</span>
+              <span class="chip">Supabase</span>
+              <span class="chip">Tesseract.js</span>
+              <span class="chip">TanStack</span>
+            </div>
+          </div>
+          <div class="meta">
+            <a href="https://birrario.netlify.app/" target="_blank" rel="noopener">Demo en vivo</a>
+            <a href="https://eirasdevx.netlify.app/projects/birrario" target="_blank" rel="noopener">Caso de estudio</a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div>
+            <div class="thumb" aria-hidden="true"></div>
+            <h3>Cuadrilla La Catola · Web cultural</h3>
+            <p>Historia, eventos, galería de momentos compartidos y noticias de la Cuadrilla La Catola en Medina del Campo.</p>
+            <div class="chips">
+              <span class="chip">Next.js</span>
+              <span class="chip">TypeScript</span>
+              <span class="chip">Tailwind CSS</span>
+            </div>
+          </div>
+          <div class="meta">
+            <a href="https://cuadrillalacatola.netlify.app/" target="_blank" rel="noopener">Demo en vivo</a>
+            <a href="https://github.com/eirasdevx/cuadrilla-la-catola" target="_blank" rel="noopener">GitHub</a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div>
+            <div class="thumb" aria-hidden="true"></div>
+            <h3>Dead Ink · Shooter retro en blanco y negro</h3>
+            <p>Shooter en primera persona creado en Unity que recrea la estética de los dibujos animados de los años 30 mezclada con acción y terror.</p>
+            <div class="chips">
+              <span class="chip">Unity</span>
+              <span class="chip">C#</span>
+              <span class="chip">PC &amp; Android</span>
+            </div>
+          </div>
+          <div class="meta">
+            <a href="https://eirasdevx.netlify.app/projects/dead-ink" target="_blank" rel="noopener">Caso de estudio</a>
+          </div>
+        </article>
+
+        <article class="proj">
+          <div>
+            <div class="thumb" aria-hidden="true"></div>
+            <h3>TeamOff · Gestión de ausencias y RRHH</h3>
+            <p>Vacaciones, bajas y permisos multiempresa con saldos, aprobaciones y calendario compartido de equipo.</p>
+            <div class="chips">
+              <span class="chip">Next.js</span>
+              <span class="chip">Tailwind CSS</span>
+              <span class="chip">Recharts</span>
+              <span class="chip">.NET MAUI</span>
+            </div>
+          </div>
+          <div class="meta">
+            <a href="https://eirasdevx.netlify.app/projects/teamoff" target="_blank" rel="noopener">Caso de estudio</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE + EDUCATION -->
+    <section aria-label="Experiencia y formación">
+      <div class="grid-2">
+        <div id="experiencia" class="panel">
+          <div class="section-title">
+            <h2>Experiencia</h2>
+            <span>Trayectoria y desarrollo</span>
+          </div>
+
+          <div class="timeline">
+            <div class="item">
+              <div class="top">
+                <h3>Desarrollo independiente · EIRAS.DEVX</h3>
+                <span class="when">2024–Actualidad</span>
+              </div>
+              <p>Diseño, desarrollo y publicación de un catálogo de más de 18 aplicaciones web, móviles y videojuegos independientes (FastPass, Carretazo, San Apptolín, Gameiras, Birrario, etc.), gestionando el ciclo completo desde la concepción hasta el despliegue.</p>
+            </div>
+
+            <div class="item">
+              <div class="top">
+                <h3>Proyectos de software &amp; Arquitectura</h3>
+                <span class="when">2024–2026</span>
+              </div>
+              <p>Desarrollo full-stack con Next.js, TypeScript, PostgreSQL, Supabase y Unity. Creación de APIs seguras, interfaces reactivas y sistemas en tiempo real con WebSockets/WebRTC.</p>
+            </div>
+          </div>
+        </div>
+
+        <div id="formacion" class="panel">
+          <div class="section-title">
+            <h2>Formación</h2>
+            <span>Estudios y especialización</span>
+          </div>
+
+          <div class="timeline">
+            <div class="item">
+              <div class="top">
+                <h3>CFGS Desarrollo de Aplicaciones Multiplataforma (DAM)</h3>
+                <span class="when">2024–2026</span>
+              </div>
+              <p>Formación oficial como Técnico Superior: diseño de bases de datos, programación orientada a objetos, desarrollo móvil, acceso a datos y sistemas multi-entorno.</p>
+            </div>
+
+            <div class="item">
+              <div class="top">
+                <h3>Especialización en desarrollo web y videojuegos</h3>
+                <span class="when">Continuo</span>
+              </div>
+              <p>Profundización en tecnologías modernas: Next.js (App Router), TypeScript, arquitectura de componentes, bases de datos relacionales y motor de juegos Unity (C#).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contacto" aria-label="Contacto">
+      <div class="section-title">
+        <h2>Contacto</h2>
+        <span>Hablemos de tu proyecto</span>
+      </div>
+
+      <div class="contact-grid">
+        <div class="panel">
+          <h3 style="margin:0 0 10px;">Mensaje rápido</h3>
+          <form id="contactForm">
+            <input type="text" name="name" placeholder="Tu nombre" required />
+            <input type="email" name="email" placeholder="Tu email" required />
+            <textarea name="message" placeholder="Tu mensaje" required></textarea>
+            <button class="btn primary" type="submit">Enviar</button>
+
+            <div class="small">
+              Puedes contactarme directamente o explorar todos los proyectos en la plataforma web oficial.
+            </div>
+          </form>
+        </div>
+
+        <div class="panel">
+          <h3 style="margin:0 0 10px;">Canales directos</h3>
+          <div class="timeline">
+            <div class="item">
+              <div class="top">
+                <h3>GitHub</h3>
+                <span class="when"><a href="https://github.com/eirasdevx" target="_blank" rel="noopener">@eirasdevx</a></span>
+              </div>
+              <p>Repositorios de código abierto, proyectos y experimentos técnicos.</p>
+            </div>
+
+            <div class="item">
+              <div class="top">
+                <h3>Plataforma web</h3>
+                <span class="when"><a href="https://eirasdevx.netlify.app/" target="_blank" rel="noopener">eirasdevx.netlify.app</a></span>
+              </div>
+              <p>Portfolio completo, tienda independiente de apps y casos de estudio detallados.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer aria-label="Pie de página">
+      <div class="footer-inner">
+        <div>© <span id="year"></span> Serafín Eiras · EIRAS.DEVX.</div>
+        <div class="footer-actions">
+          <a class="btn" href="#top">↑ Arriba</a>
+          <a class="btn" href="#contacto">Contacto</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <script src="./js/app.js"></script>
+</body>
+</html>
