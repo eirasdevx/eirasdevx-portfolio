@@ -33,7 +33,6 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: project.summary,
     alternates: alternates(lang, `/projects/${project.slug}`),
     openGraph: { title, description: project.summary },
-    ...(project.app?.icon && { icons: { icon: project.app.icon, apple: project.app.icon } }),
   };
 }
 
