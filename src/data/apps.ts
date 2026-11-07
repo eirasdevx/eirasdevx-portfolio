@@ -65,7 +65,7 @@ export const apps: StoreAppSource[] = [
     websiteUrl: "https://fastpass-ticketmanager.netlify.app/",
     repositoryUrl: "https://github.com/eirasdevx/fastpass",
     featured: true,
-    screenshots: [],
+    screenshots: ["/screenshots/fastpass/01.webp", "/screenshots/fastpass/02.webp", "/screenshots/fastpass/03.webp", "/screenshots/fastpass/04.webp", "/screenshots/fastpass/05.webp"],
     artwork: { glyph: "ticket", tone: "dark" },
     features: {
       es: ["Entradas con QR sin registro", "Eventos, tipos de entrada y control de aforo", "Editor visual de plantillas de entrada", "Inscripción con aprobación manual o automática", "Validación con la cámara del móvil o por código", "Paneles por organización con listados y CSV"],
