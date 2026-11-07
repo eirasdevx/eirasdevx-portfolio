@@ -43,7 +43,6 @@ export const apps: StoreAppSource[] = [
   },
   {
     id: "app-fastpass",
-    hidden: true,
     theme: { background: "#111014", surface: "#1d1725", foreground: "#f6edff", muted: "#bbadca", accent: "#dca4fa", accentText: "#24102e" },
     icon: "/app-icons/fastpass.png",
     logo: "/app-logos/fastpass.png",
@@ -64,6 +63,7 @@ export const apps: StoreAppSource[] = [
     technologies: ["Next.js", "React", "TypeScript", "Tailwind CSS", "Supabase", "PostgreSQL", "Zod", "Vitest"],
     status: "available",
     websiteUrl: "https://fastpass-ticketmanager.netlify.app/",
+    repositoryUrl: "https://github.com/eirasdevx/fastpass",
     featured: true,
     screenshots: [],
     artwork: { glyph: "ticket", tone: "dark" },
