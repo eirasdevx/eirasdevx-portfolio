@@ -191,6 +191,77 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "knds",
+    appSlug: "knds",
+    type: { es: "Emulador para Android", en: "Android emulator" },
+    summary: {
+      es: "Emulador de DS para Android con la app en Kotlin y el núcleo melonDS en C++, de la misma familia que KGBA.",
+      en: "DS emulator for Android with the app in Kotlin and the melonDS core in C++, from the same family as KGBA.",
+    },
+    layout: "square",
+    tone: "light",
+    caseStudy: {
+      es: {
+        problem:
+          "La DS tiene dos procesadores, 3D por hardware, dos pantallas y una de ellas táctil. Escribir eso desde cero llevaría años, así que el reto es otro: llevar un núcleo maduro de escritorio a Android y construir alrededor una app cómoda para jugar en el móvil.",
+        goals: [
+          "Usar melonDS como núcleo sin tocar su código, solo su interfaz de plataforma.",
+          "Mantener la misma app que KGBA: biblioteca, guardados, ajustes y diálogos.",
+          "Jugar en vertical con las dos pantallas grandes y los controles a mano.",
+          "No incluir juegos ni depender de archivos de BIOS.",
+        ],
+        architecture:
+          "Proyecto Gradle con una app Android (minSdk 26) y una parte nativa compilada con CMake y el NDK. melonDS (sin su interfaz Qt) se compila como biblioteca estática; libknds.so añade el puente JNI (consola, frames, entrada, audio, partidas y estados) y la capa Platform de melonDS (archivos, hilos, guardado, micrófono y memoria compartida para el JIT). En Kotlin, un hilo de emulación pinta las dos pantallas en un SurfaceView y envía el audio a 48 kHz; encima van la consola dibujada, los controles y la biblioteca.",
+        decisions: [
+          "Integrar melonDS por su capa Platform en lugar de bifurcarlo, para poder actualizarlo.",
+          "Activar el JIT ARM64 con un interruptor, porque algunos juegos van mejor con el intérprete.",
+          "Identificar los juegos por el código de cartucho de la cabecera antes que por el CRC, para no leer ROMs de cientos de MB.",
+          "Dibujar la consola en código, con la carátula del juego desenfocada de fondo.",
+          "Compartir con KGBA los diálogos, la biblioteca y la barra de accesos en cápsula.",
+        ],
+        challenges: [
+          "Compilar melonDS con el NDK y que su JIT pueda mapear memoria ejecutable en Android 8.0 o superior.",
+          "Que la pantalla táctil reciba los toques del lápiz sin que los controles le roben ninguno.",
+          "Leer carpetas enteras de juegos con el acceso a almacenamiento de Android.",
+        ],
+        nextSteps: [
+          "Portar el renderizador OpenGL de melonDS a GLES 3 para el 3D a mayor resolución.",
+          "Probar el JIT juego a juego en más móviles.",
+          "Wifi local entre dos móviles.",
+        ],
+      },
+      en: {
+        problem:
+          "The DS has two processors, hardware 3D and two screens, one of them touch-enabled. Writing all that from scratch would take years, so the challenge is different: bring a mature desktop core to Android and build a comfortable phone app around it.",
+        goals: [
+          "Use melonDS as the core without changing its code, only its platform interface.",
+          "Keep the same app as KGBA: library, saves, settings and dialogs.",
+          "Play in portrait with both screens large and the controls within reach.",
+          "Ship no games and depend on no BIOS files.",
+        ],
+        architecture:
+          "Gradle project with an Android app (minSdk 26) and a native part built with CMake and the NDK. melonDS (without its Qt frontend) is built as a static library; libknds.so adds the JNI bridge (console, frames, input, audio, saves and states) and melonDS's Platform layer (files, threads, saving, microphone and shared memory for the JIT). In Kotlin, an emulation thread draws both screens on a SurfaceView and streams 48 kHz audio; the drawn console, controls and library sit on top.",
+        decisions: [
+          "Integrate melonDS through its Platform layer instead of forking it, so it can be updated.",
+          "Put the ARM64 JIT behind a switch, because some games run better on the interpreter.",
+          "Identify games by the cartridge code in the header before the CRC, to avoid reading ROMs hundreds of MB in size.",
+          "Draw the console in code, with the game's box art blurred in the background.",
+          "Share the dialogs, library and capsule toolbar with KGBA.",
+        ],
+        challenges: [
+          "Building melonDS with the NDK and letting its JIT map executable memory on Android 8.0 or later.",
+          "Routing stylus touches to the touch screen without the controls stealing any of them.",
+          "Reading whole game folders through Android's storage access framework.",
+        ],
+        nextSteps: [
+          "Port melonDS's OpenGL renderer to GLES 3 for higher-resolution 3D.",
+          "Test the JIT game by game on more phones.",
+          "Local Wi-Fi between two phones.",
+        ],
+      },
+    },
+  },
+  {
     slug: "san-apptolin",
     appSlug: "san-apptolin",
     type: { es: "Guía de fiestas", en: "Festival guide" },

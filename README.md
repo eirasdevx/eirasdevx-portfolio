@@ -35,7 +35,7 @@ Add one object to `src/data/apps.ts`. That entry feeds the store cards, the deta
 
 ### Publishing policy
 
-Only projects whose code is public on GitHub are shown. Right now that is **San Apptolín**, **FastPass** and **KGBA**; every other entry is `hidden: true`. To publish one, push its repository first, then in `src/data/apps.ts` delete its `hidden: true` line and add its `repositoryUrl`.
+Only projects whose code is public on GitHub are shown. Right now that is **San Apptolín**, **FastPass**, **KGBA** and **KNDS**; every other entry is `hidden: true`. To publish one, push its repository first, then in `src/data/apps.ts` delete its `hidden: true` line and add its `repositoryUrl`.
 
 Case studies live in `src/data/projects.ts` and link to an app through `appSlug`. Name, status, stack and artwork come from the catalog, so nothing is duplicated. Any case-study field left undefined renders as "Documentation in progress".
 
