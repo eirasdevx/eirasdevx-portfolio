@@ -62,7 +62,7 @@ The logo lives in `public/brand/`. `logo.png` is white on a transparent backgrou
 
 `site.logo.src` (in `src/data/site.ts`) points to the file. The logo is drawn as a mask, so it takes the surrounding text colour: black on the navbar and white in the footer. To change it, replace the file with another monochrome PNG/SVG on a transparent background. For the browser tab icon, replace `src/app/icon.png` and `src/app/apple-icon.png`.
 
-The hero combines the original FastPass, Carretazo and La Catola logos with editorial artwork and links to their project pages. These covers are not screenshots. Edit `src/components/hero/HeroVisual.tsx` and the showcase styles in `src/app/globals.css`; hero copy and service labels live in both language dictionaries. The primary action opens the contact page.
+The hero always shows three cards built from the visible catalog: featured apps first, then the rest in `src/data/apps.ts` order, each with its original artwork and a link to its project page. These covers are not screenshots. Edit `src/components/hero/HeroVisual.tsx` and the showcase styles in `src/app/globals.css`; hero copy and service labels live in both language dictionaries. The primary action opens the contact page.
 
 ## App colours
 

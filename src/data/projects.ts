@@ -126,7 +126,7 @@ export const projects: Project[] = [
       en: "A Game Boy Advance emulator written from scratch in Kotlin, with an Android-independent core and an app designed for playing on a phone.",
     },
     layout: "square",
-    tone: "dark",
+    tone: "light",
     caseStudy: {
       es: {
         problem:

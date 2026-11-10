@@ -11,8 +11,8 @@ import { CardStage } from "@/components/animations/CardStage";
 
 /**
  * Editorial showcase of published projects, never simulated screenshots or
- * customer metrics. It is built from the catalog: the visible featured apps
- * (up to three) fill the stage, so hiding or publishing an app in
+ * customer metrics. It is built from the catalog: three visible apps fill the
+ * stage (featured ones first, then the rest), so hiding or publishing an app in
  * `src/data/apps.ts` updates the hero with no changes here.
  *
  *   1 app  → one large card with the real phone capture when there is one
@@ -33,8 +33,11 @@ function pitchFor(app: StoreApp, t: Dictionary): string {
 const SHORT_NAMES: Record<string, string> = { "cuadrilla-la-catola": "La Catola" };
 
 export function HeroVisual({ lang, t }: { lang: Locale; t: Dictionary }) {
+  // Always three cards when the catalog has them: featured apps first, then
+  // any other visible app in catalog order.
   const featured = getFeaturedApps(lang);
-  const apps = (featured.length ? featured : getApps(lang)).slice(0, 3);
+  const rest = getApps(lang).filter((app) => !app.featured);
+  const apps = [...featured, ...rest].slice(0, 3);
   if (!apps.length) return null;
   const slots = LAYOUTS[apps.length];
 

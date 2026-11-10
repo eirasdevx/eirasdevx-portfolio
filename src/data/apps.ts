@@ -109,7 +109,7 @@ export const apps: StoreAppSource[] = [
   },
   {
     id: "app-kgba",
-    theme: { background: "#17161c", surface: "#24222b", foreground: "#fff4ec", muted: "#bdb3ad", accent: "#ff5a4f", accentText: "#2a0b08" },
+    theme: { background: "#fff4ec", surface: "#ffe8da", foreground: "#2b2a33", muted: "#6b5f59", accent: "#c8261f", accentText: "#ffffff" },
     icon: "/app-icons/kgba.svg",
     iconFullBleed: true,
     logo: "/app-icons/kgba.svg",
@@ -134,7 +134,7 @@ export const apps: StoreAppSource[] = [
     repositoryUrl: "https://github.com/eirasdevx/kgba",
     featured: false,
     screenshots: [],
-    artwork: { glyph: "grid", tone: "dark" },
+    artwork: { glyph: "grid", tone: "light" },
     features: {
       es: ["Núcleo ARM7TDMI propio, ARM y Thumb", "BIOS en Kotlin, sin archivos de Nintendo", "Controles táctiles editables y mando físico", "10 estados guardados por juego y rebobinado", "Cable link por red local o Bluetooth", "Reloj, sensor solar, giroscopio y vibración del cartucho"],
       en: ["Own ARM7TDMI core, ARM and Thumb", "BIOS written in Kotlin, no Nintendo files", "Editable touch controls and gamepad support", "10 save states per game and rewind", "Link cable over local network or Bluetooth", "Cartridge clock, solar sensor, gyroscope and rumble"],
