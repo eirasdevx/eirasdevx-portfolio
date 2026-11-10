@@ -118,6 +118,79 @@ export const projects: Project[] = [
     },
   },
   {
+    slug: "kgba",
+    appSlug: "kgba",
+    type: { es: "Emulador para Android", en: "Android emulator" },
+    summary: {
+      es: "Un emulador de Game Boy Advance escrito desde cero en Kotlin, con núcleo independiente de Android y una app pensada para jugar en el móvil.",
+      en: "A Game Boy Advance emulator written from scratch in Kotlin, with an Android-independent core and an app designed for playing on a phone.",
+    },
+    layout: "square",
+    tone: "dark",
+    caseStudy: {
+      es: {
+        problem:
+          "Emular una consola significa reproducir su procesador, sus gráficos, su sonido y su hardware con la precisión suficiente para que los juegos funcionen tal cual, y hacerlo a 60 imágenes por segundo en un móvil.",
+        goals: [
+          "Escribir el emulador completo desde cero, sin bibliotecas de emulación.",
+          "Mantener el núcleo separado de Android para poder probarlo en el PC.",
+          "No depender de la BIOS de Nintendo ni incluir ningún juego.",
+          "Ofrecer una app cómoda en el móvil: controles editables, mando físico, estados guardados y multijugador.",
+        ],
+        architecture:
+          "Proyecto Gradle con tres módulos. El módulo core es Kotlin/JVM puro sin dependencias: CPU ARM7TDMI con ARM y Thumb, bus de memoria con waitstates, PPU por líneas (modos 0-5, sprites afines, ventanas y blending), APU con 4 canales PSG y Direct Sound, DMA, temporizadores, guardado SRAM/Flash/EEPROM, puerto serie y GPIO del cartucho. app es la app Android (minSdk 24) y desktop, un reproductor Swing y un ejecutor sin ventana para pruebas.",
+        decisions: [
+          "Implementar la BIOS como llamadas SWI de alto nivel en Kotlin, para que funcione sin archivos de Nintendo (la BIOS real sigue siendo opcional).",
+          "Planificar la emulación por líneas en lugar de por ciclo, a cambio de rendimiento en el móvil.",
+          "Detectar automáticamente el tipo de guardado del cartucho.",
+          "Dibujar la carcasa en código, sin imágenes, y permitir importar carcasas externas.",
+          "Implementar el cable link sobre TCP o Bluetooth, esperando la respuesta del otro móvil en cada transferencia.",
+        ],
+        challenges: [
+          "Pasar los tests de jsmolka/gba-tests (arm, thumb, memory, bios, save…) con la BIOS propia.",
+          "Llegar a 60 fps en Android, que obliga a compilar en release con R8.",
+          "Sincronizar dos consolas por red sin que los juegos detecten el retraso.",
+          "Que los controles táctiles nunca tapen la imagen del juego en ningún tamaño ni orientación.",
+        ],
+        nextSteps: [
+          "Decodificar las instrucciones de la CPU por bloques para ganar rendimiento.",
+          "Afinar la temporización de waitstates y prefetch.",
+          "Probar los sensores de inclinación y giroscopio con los juegos reales.",
+        ],
+      },
+      en: {
+        problem:
+          "Emulating a console means reproducing its processor, graphics, sound and hardware closely enough for games to run unmodified, and doing it at 60 frames per second on a phone.",
+        goals: [
+          "Write the whole emulator from scratch, with no emulation libraries.",
+          "Keep the core separate from Android so it can be tested on a PC.",
+          "Not depend on Nintendo's BIOS or ship any games.",
+          "Offer a comfortable phone app: editable controls, gamepad support, save states and multiplayer.",
+        ],
+        architecture:
+          "Gradle project with three modules. The core module is plain Kotlin/JVM with no dependencies: ARM7TDMI CPU with ARM and Thumb, memory bus with waitstates, scanline PPU (modes 0-5, affine sprites, windows and blending), APU with 4 PSG channels and Direct Sound, DMA, timers, SRAM/Flash/EEPROM saves, serial port and cartridge GPIO. app is the Android app (minSdk 24) and desktop is a Swing player plus a headless runner for tests.",
+        decisions: [
+          "Implement the BIOS as high-level SWI calls in Kotlin, so it runs without Nintendo files (a real BIOS stays optional).",
+          "Schedule emulation per scanline rather than per cycle, trading accuracy for performance on phones.",
+          "Auto-detect the cartridge save type.",
+          "Draw the console shell in code, with no images, and allow importing external skins.",
+          "Run the link cable over TCP or Bluetooth, waiting for the other phone's reply on each transfer.",
+        ],
+        challenges: [
+          "Passing jsmolka/gba-tests (arm, thumb, memory, bios, save…) with the custom BIOS.",
+          "Reaching 60 fps on Android, which requires release builds with R8.",
+          "Synchronising two consoles over a network without games noticing the delay.",
+          "Making sure touch controls never cover the game image at any size or orientation.",
+        ],
+        nextSteps: [
+          "Decode CPU instructions in blocks for better performance.",
+          "Refine waitstate and prefetch timing.",
+          "Test the tilt and gyroscope sensors with real games.",
+        ],
+      },
+    },
+  },
+  {
     slug: "san-apptolin",
     appSlug: "san-apptolin",
     type: { es: "Guía de fiestas", en: "Festival guide" },
