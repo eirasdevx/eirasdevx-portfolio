@@ -41,6 +41,7 @@ export const es = {
     digitalTicket: "Entrada digital",
     carretazoPitch: "Captura hoy. Revive después.",
     catolaPitch: "Una comunidad con su propio lugar.",
+    kgbaPitch: "Emulador propio.",
     community: "Comunidad",
     viewProject: "Explorar proyecto",
     viewAll: "Ver todos",
