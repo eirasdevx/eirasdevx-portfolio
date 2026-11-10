@@ -122,8 +122,8 @@ export const projects: Project[] = [
     appSlug: "kgba",
     type: { es: "Emulador para Android", en: "Android emulator" },
     summary: {
-      es: "Un emulador de Game Boy Advance escrito desde cero en Kotlin, con núcleo independiente de Android y una app pensada para jugar en el móvil.",
-      en: "A Game Boy Advance emulator written from scratch in Kotlin, with an Android-independent core and an app designed for playing on a phone.",
+      es: "Emulador propio de Game Boy Advance escrito desde cero en Kotlin, con núcleo independiente de Android y una app pensada para jugar en el móvil.",
+      en: "Custom Game Boy Advance emulator written from scratch in Kotlin, with an Android-independent core and an app designed for playing on a phone.",
     },
     layout: "square",
     tone: "light",
@@ -134,13 +134,13 @@ export const projects: Project[] = [
         goals: [
           "Escribir el emulador completo desde cero, sin bibliotecas de emulación.",
           "Mantener el núcleo separado de Android para poder probarlo en el PC.",
-          "No depender de la BIOS de Nintendo ni incluir ningún juego.",
+          "No depender de ningún archivo de BIOS externo ni incluir ningún juego.",
           "Ofrecer una app cómoda en el móvil: controles editables, mando físico, estados guardados y multijugador.",
         ],
         architecture:
           "Proyecto Gradle con tres módulos. El módulo core es Kotlin/JVM puro sin dependencias: CPU ARM7TDMI con ARM y Thumb, bus de memoria con waitstates, PPU por líneas (modos 0-5, sprites afines, ventanas y blending), APU con 4 canales PSG y Direct Sound, DMA, temporizadores, guardado SRAM/Flash/EEPROM, puerto serie y GPIO del cartucho. app es la app Android (minSdk 24) y desktop, un reproductor Swing y un ejecutor sin ventana para pruebas.",
         decisions: [
-          "Implementar la BIOS como llamadas SWI de alto nivel en Kotlin, para que funcione sin archivos de Nintendo (la BIOS real sigue siendo opcional).",
+          "Implementar la BIOS como llamadas SWI de alto nivel en Kotlin, para que funcione sin archivos externos (la BIOS real sigue siendo opcional).",
           "Planificar la emulación por líneas en lugar de por ciclo, a cambio de rendimiento en el móvil.",
           "Detectar automáticamente el tipo de guardado del cartucho.",
           "Dibujar la carcasa en código, sin imágenes, y permitir importar carcasas externas.",
@@ -164,13 +164,13 @@ export const projects: Project[] = [
         goals: [
           "Write the whole emulator from scratch, with no emulation libraries.",
           "Keep the core separate from Android so it can be tested on a PC.",
-          "Not depend on Nintendo's BIOS or ship any games.",
+          "Not depend on any external BIOS file or ship any games.",
           "Offer a comfortable phone app: editable controls, gamepad support, save states and multiplayer.",
         ],
         architecture:
           "Gradle project with three modules. The core module is plain Kotlin/JVM with no dependencies: ARM7TDMI CPU with ARM and Thumb, memory bus with waitstates, scanline PPU (modes 0-5, affine sprites, windows and blending), APU with 4 PSG channels and Direct Sound, DMA, timers, SRAM/Flash/EEPROM saves, serial port and cartridge GPIO. app is the Android app (minSdk 24) and desktop is a Swing player plus a headless runner for tests.",
         decisions: [
-          "Implement the BIOS as high-level SWI calls in Kotlin, so it runs without Nintendo files (a real BIOS stays optional).",
+          "Implement the BIOS as high-level SWI calls in Kotlin, so it runs without external files (a real BIOS stays optional).",
           "Schedule emulation per scanline rather than per cycle, trading accuracy for performance on phones.",
           "Auto-detect the cartridge save type.",
           "Draw the console shell in code, with no images, and allow importing external skins.",

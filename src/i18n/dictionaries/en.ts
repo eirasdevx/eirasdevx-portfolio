@@ -39,7 +39,6 @@ export const en: Dictionary = {
     digitalTicket: "Digital ticket",
     carretazoPitch: "Capture today. Relive later.",
     catolaPitch: "A community with a place of its own.",
-    kgbaPitch: "My own emulator.",
     community: "Community",
     viewProject: "Explore project",
     viewAll: "View all",

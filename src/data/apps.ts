@@ -118,12 +118,12 @@ export const apps: StoreAppSource[] = [
     slug: "kgba",
     name: "KGBA",
     tagline: {
-      es: "Un emulador de Game Boy Advance escrito desde cero en Kotlin.",
-      en: "A Game Boy Advance emulator written from scratch in Kotlin.",
+      es: "Emulador propio de Game Boy Advance escrito desde cero en Kotlin.",
+      en: "Custom Game Boy Advance emulator written from scratch in Kotlin.",
     },
     description: {
-      es: "KGBA es un emulador de Game Boy Advance para Android hecho desde cero en Kotlin. El núcleo (CPU ARM7TDMI, gráficos, sonido, DMA, temporizadores y guardado del cartucho) es Kotlin puro y también se ejecuta en el PC. Encima va una app con controles táctiles personalizables, mando físico, estados guardados, rebobinado y multijugador por cable link en red local o Bluetooth. No necesita la BIOS de Nintendo: incluye una propia en Kotlin. No incluye juegos.",
-      en: "KGBA is a Game Boy Advance emulator for Android built from scratch in Kotlin. The core (ARM7TDMI CPU, graphics, sound, DMA, timers and cartridge saves) is plain Kotlin and also runs on a PC. On top sits an app with customisable touch controls, gamepad support, save states, rewind and link-cable multiplayer over local network or Bluetooth. It does not need Nintendo's BIOS: it ships its own, written in Kotlin. No games are included.",
+      es: "KGBA es un emulador de Game Boy Advance para Android hecho desde cero en Kotlin. El núcleo (CPU ARM7TDMI, gráficos, sonido, DMA, temporizadores y guardado del cartucho) es Kotlin puro y también se ejecuta en el PC. Encima va una app con controles táctiles personalizables, mando físico, estados guardados, rebobinado y multijugador por cable link en red local o Bluetooth. No necesita ningún archivo de BIOS: incluye una propia en Kotlin. No incluye juegos.",
+      en: "KGBA is a Game Boy Advance emulator for Android built from scratch in Kotlin. The core (ARM7TDMI CPU, graphics, sound, DMA, timers and cartridge saves) is plain Kotlin and also runs on a PC. On top sits an app with customisable touch controls, gamepad support, save states, rewind and link-cable multiplayer over local network or Bluetooth. It needs no BIOS file: it ships its own, written in Kotlin. No games are included.",
     },
     category: "mobile",
     subcategory: { es: "Emulador", en: "Emulator" },
@@ -136,8 +136,8 @@ export const apps: StoreAppSource[] = [
     screenshots: [],
     artwork: { glyph: "grid", tone: "light" },
     features: {
-      es: ["Núcleo ARM7TDMI propio, ARM y Thumb", "BIOS en Kotlin, sin archivos de Nintendo", "Controles táctiles editables y mando físico", "10 estados guardados por juego y rebobinado", "Cable link por red local o Bluetooth", "Reloj, sensor solar, giroscopio y vibración del cartucho"],
-      en: ["Own ARM7TDMI core, ARM and Thumb", "BIOS written in Kotlin, no Nintendo files", "Editable touch controls and gamepad support", "10 save states per game and rewind", "Link cable over local network or Bluetooth", "Cartridge clock, solar sensor, gyroscope and rumble"],
+      es: ["Núcleo ARM7TDMI propio, ARM y Thumb", "BIOS propia en Kotlin, sin archivos externos", "Controles táctiles editables y mando físico", "10 estados guardados por juego y rebobinado", "Cable link por red local o Bluetooth", "Reloj, sensor solar, giroscopio y vibración del cartucho"],
+      en: ["Own ARM7TDMI core, ARM and Thumb", "Own BIOS written in Kotlin, no external files", "Editable touch controls and gamepad support", "10 save states per game and rewind", "Link cable over local network or Bluetooth", "Cartridge clock, solar sensor, gyroscope and rumble"],
     },
     requirements: {
       es: ["Android 7.0 o superior", "Tus propias ROMs o juegos homebrew"],

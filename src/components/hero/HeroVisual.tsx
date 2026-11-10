@@ -27,7 +27,6 @@ function pitchFor(app: StoreApp, t: Dictionary): string {
   if (app.slug === "fastpass") return t.hero.fastpassPitch;
   if (app.slug === "carretazo") return t.hero.carretazoPitch;
   if (app.slug === "cuadrilla-la-catola") return t.hero.catolaPitch;
-  if (app.slug === "kgba") return t.hero.kgbaPitch;
   return app.tagline;
 }
 
